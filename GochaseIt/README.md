@@ -3,7 +3,7 @@
 A mini-project build as a part of major SLAM project which uses ROS and Gazebo to build a mobile robot for chasing a white ball.
 
 <p align ="center">
-<img src="https://github.com/ashutoshtiwari13/Map-a-world-with-SLAM/blob/master/GochaseIt/my_ball/demo.gif" height= "800px" width="800px"/>
+<img src="https://github.com/ashutoshtiwari13/Map-a-world-with-SLAM/blob/master/GochaseIt/my_ball/demo.gif" height= "600px" width="800px"/>
 </p>
 
 ## Project Heads Up
