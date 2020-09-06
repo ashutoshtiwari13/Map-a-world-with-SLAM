@@ -13,6 +13,16 @@ This project is about implementing SLAM(Simultaneous Localization and mapping) w
 #### 3. [Mapping and Simulation](#Mapping-and-Simulation)
 
 ## Project Heads Up
+- Most of the times in a real world setting, the robot would have neither a map nor know its pose to localize itself in the environment i.e to know about the mapping of the environment, and this is where SLAM comes in. With SLAM, the robot does an outstanding job with just its own movement and sensory data to build a map of its environment while simultaneously localizing itself relative to building map.
+- SLAM has two key approaches -
+   - Grid-based FastSLAM
+   - GraphSLAM
+
+- RTAB-MAP - Real-Time Appearance-Based Mapping(RTAB-Map) is an RGB-D Graph-Based SLAM approach based on an incremental appearance-based loop closure detector. For this project, RTAB-MAP is used, and it is composed of Front-end and Back-end.
+- In general, GraphSLAM has a better accuracy over FastSLAM unlike using particles at a location in the environment, GraphSLAM works with all the data at once to find the optimal solution. So, the project focuses on using GraphSLAM for the task at hand.
+- `Front end` - The Front-end of GraphSLAM looks at how to construct the graph using the odometry and sensory measurements collected by the robot. This includes interpreting sensory data, creating the graph, and continuing to add nodes and edges to it as the robot traverses the environment.
+- `Back end` - The Back-end of GraphSLAM is where the magic happens. The input to the Back-end is the completed graph with all of the constraints. And the output is the most probable configuration of robot poses and map features. The back-end is an optimization process that takes all of the constraints and finds the system configuration that produces the smallest error. It is a lot more consistent across applications.
+- For this project, the Front-end and Back-end are performed iteratively, with a Back-end feeding an updated graph to the Front-end for further processing.
 - The robot configuration frames.The ROS tf library is used to keep track of all the different coordinate frames and defines their relation to one another. For this project the tf view_frames is used to create the graphical representation of the bot as shown below.
 
 <p align ="center">
@@ -86,6 +96,7 @@ $ roslaunch my_robot world.launch
 ```sh
 $ cd ~/catkin_ws/
 $ source devel/setup.bash
+$ roslaunch my_robot amcl.launch
 $ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 $ roslaunch my_robot mapping.launch
 ```
@@ -99,3 +110,17 @@ rtabmap-databaseViewer ~/.ros/rtabmap.db
 ```
 
 ## Mapping and Simulation
+## Mapping Mode
+Launching mapping `roslaunch my_robot mapping.launch` then navigate using `teleop` for map generation
+
+<p align ="center">
+<img src="https://github.com/ashutoshtiwari13/Map-a-world-with-SLAM/blob/master/output/Overview.png" height= "500px" width="800px"/>
+</p>
+
+### Localization Mode
+A localization project using ROS AMCL package to accurately localize a mobile robot inside a map in the Gazebo simulation environments.
+
+<img src="https://github.com/ashutoshtiwari13/Map-a-world-with-SLAM/blob/master/output/localization.gif" height="425px" width="400px" hspace="20"/><img src="https://github.com/ashutoshtiwari13/Map-a-world-with-SLAM/blob/master/output/localization_2.gif" height="425px" width="400px"/>
+
+
+<img src="https://github.com/ashutoshtiwari13/Map-a-world-with-SLAM/blob/master/output/local_4.gif" height="425px" width="400px" hspace="20"/><img src="https://github.com/ashutoshtiwari13/Map-a-world-with-SLAM/blob/master/output/local_4.gif" height="425px" width="400px"/>
