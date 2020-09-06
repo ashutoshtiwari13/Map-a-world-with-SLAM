@@ -100,11 +100,11 @@ $ roslaunch my_robot amcl.launch
 $ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 $ roslaunch my_robot mapping.launch
 ```
-6. Send move command via teleop package to control your robot and observe real-time visualization in the environment `rtabmapviz`.
+7. Send move command via teleop package to control your robot and observe real-time visualization in the environment `rtabmapviz`.
 ```sh
 $ rtabmap-databaseViewer ~/.ros/rtabmap.db
 ```
-7. Once satisfied with your move, press `Ctrl + c` to exit then view your database with
+8. Once satisfied with your move, press `Ctrl + c` to exit then view your database with
 ```
 rtabmap-databaseViewer ~/.ros/rtabmap.db
 ```
@@ -120,7 +120,7 @@ Launching mapping `roslaunch my_robot mapping.launch` then navigate using `teleo
 ### Localization Mode
 A localization project using ROS AMCL package to accurately localize a mobile robot inside a map in the Gazebo simulation environments.
 
-<img src="https://github.com/ashutoshtiwari13/Map-a-world-with-SLAM/blob/master/output/localization.gif" height="425px" width="400px" hspace="20"/><img src="https://github.com/ashutoshtiwari13/Map-a-world-with-SLAM/blob/master/output/localization_2.gif" height="425px" width="400px"/>
+<img src="https://github.com/ashutoshtiwari13/Map-a-world-with-SLAM/blob/master/output/localization_2.gif" height="425px" width="380px" hspace="20"/><img src="https://github.com/ashutoshtiwari13/Map-a-world-with-SLAM/blob/master/output/localization.gif" height="425px" width="400px"/>
 
 
-<img src="https://github.com/ashutoshtiwari13/Map-a-world-with-SLAM/blob/master/output/local_4.gif" height="425px" width="400px" hspace="20"/><img src="https://github.com/ashutoshtiwari13/Map-a-world-with-SLAM/blob/master/output/local_4.gif" height="425px" width="400px"/>
+<img src="https://github.com/ashutoshtiwari13/Map-a-world-with-SLAM/blob/master/output/local_3.gif" height="425px" width="380px" hspace="20"/><img src="https://github.com/ashutoshtiwari13/Map-a-world-with-SLAM/blob/master/output/local_4.gif" height="425px" width="400px"/>
